@@ -1,4 +1,4 @@
-import { renderGoblins } from "./render-utils.js";
+import { renderGoblins } from './render-utils.js';
 // import functions and grab DOM elements
 const characterDisplayEl = document.querySelector('#character-display');
 const characterHPEl = document.querySelector('#character-hp');
@@ -7,8 +7,8 @@ const characterHPEl = document.querySelector('#character-hp');
 const goblinsDefeatedEl = document.querySelector('#goblins-defeated');
 
 const goblinInputEl = document.getElementById('goblin-input');
-const goblinSubmitButton = document.getElementById('submit-button');
-// const goblinFormEl = document.getElementById('submit');
+// const goblinSubmitButton = document.getElementById('submit-button');
+const goblinFormEl = document.getElementById('submit');
 const goblinDisplayEl = document.getElementById('display-goblins');
 
 // let state
@@ -31,11 +31,11 @@ let goblinArr = [
 ];
 
 // set event listeners 
-goblinSubmitButton.addEventListener('submit', (e) => {
+goblinFormEl.addEventListener('submit', (e) => {
 //dont forget prevent default
     e.preventDefault(); 
 // use form data
-    const data = new FormData(goblinSubmitButton);
+    const data = new FormData(goblinFormEl);
     
     const newGoblin = {
         name: data.get('goblin-name'), 
@@ -46,7 +46,7 @@ goblinSubmitButton.addEventListener('submit', (e) => {
 // display goblin function
     displayGoblins();
 // clear the input values
-    goblinInputEl.textContent = '';
+    goblinFormEl.reset();
 });
 
 function displayGoblins() {
@@ -89,10 +89,10 @@ function displayGoblins() {
             });
         }
         goblinDisplayEl.append(newGoblin);
+        characterHPEl.textContent = `Character Health Points: ${characterHP}`;
     }}
 
 displayGoblins();
-console.log(goblinArr);
   // append to goblin display
   // add event listener to the goblin div
 

@@ -15,37 +15,37 @@ export function renderGoblins(goblin) {
     goblinHP.textContent = goblin.hp;
 
     if (goblin.hp === 10) {
-        goblinImg.src = '/assets/goblin.png'; 
+        goblinImg.src = '/assets/boss-goblin.png'; 
     }
     if (goblin.hp === 9) {
-        goblinImg.src = '/assets/goblin.png'; 
+        goblinImg.src = '/assets/boss-goblin.png'; 
     }
     if (goblin.hp === 8) {
-        goblinImg.src = '/assets/goblin.png'; 
+        goblinImg.src = '/assets/boss-goblin.png'; 
     }
     if (goblin.hp === 7) {
-        goblinImg.src = '/assets/goblin.png'; 
+        goblinImg.src = '/assets/big-goblin.png'; 
     }
     if (goblin.hp === 6) {
-        goblinImg.src = '/assets/goblin.png'; 
+        goblinImg.src = '/assets/big-goblin.png'; 
     }
     if (goblin.hp === 5) {
-        goblinImg.src = '/assets/goblin.png'; 
+        goblinImg.src = '/assets/big-goblin.png'; 
     }
     if (goblin.hp === 4) {
         goblinImg.src = '/assets/goblin.png'; 
     }
     if (goblin.hp === 3) {
-        goblinImg.src = '/assets/goblin.png'; 
+        goblinImg.src = '/assets/small-goblin.png'; 
     }
     if (goblin.hp === 2) {
-        goblinImg.src = '/assets/goblin.png'; 
+        goblinImg.src = '/assets/small-goblin.png'; 
     }
     if (goblin.hp === 1) {
-        goblinImg.src = '/assets/goblin.png'; 
+        goblinImg.src = '/assets/small-goblin.png'; 
     }
     if (goblin.hp === 0) {
-        goblinImg.src = '/assets/goblin.png'; 
+        goblinImg.src = '/assets/skull.png'; 
     }
 
     goblinDiv.append(goblinImg, goblinName, goblinHP);
