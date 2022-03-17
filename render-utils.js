@@ -5,8 +5,8 @@ export function renderGoblins(goblin) {
     <p>goblin hp</p>
 </div>  */
     const goblinDiv = document.createElement('div');
+    const goblinImg = document.createElement('img');
     const goblinName = document.createElement('h2');
-    const goblinImg = document.createElement('p');
     const goblinHP = document.createElement('p');
 
     goblinDiv.classList.add('goblin');
@@ -14,24 +14,41 @@ export function renderGoblins(goblin) {
     goblinName.textContent = goblin.name;
     goblinHP.textContent = goblin.hp;
 
+    if (goblin.hp === 10) {
+        goblinImg.src = '/assets/goblin.png'; 
+    }
+    if (goblin.hp === 9) {
+        goblinImg.src = '/assets/goblin.png'; 
+    }
+    if (goblin.hp === 8) {
+        goblinImg.src = '/assets/goblin.png'; 
+    }
+    if (goblin.hp === 7) {
+        goblinImg.src = '/assets/goblin.png'; 
+    }
+    if (goblin.hp === 6) {
+        goblinImg.src = '/assets/goblin.png'; 
+    }
     if (goblin.hp === 5) {
-        goblinImg.textContent = ''; 
+        goblinImg.src = '/assets/goblin.png'; 
     }
     if (goblin.hp === 4) {
-        goblinImg.textContent = ''; 
+        goblinImg.src = '/assets/goblin.png'; 
     }
     if (goblin.hp === 3) {
-        goblinImg.textContent = ''; 
+        goblinImg.src = '/assets/goblin.png'; 
     }
     if (goblin.hp === 2) {
-        goblinImg.textContent = ''; 
+        goblinImg.src = '/assets/goblin.png'; 
     }
     if (goblin.hp === 1) {
-        goblinImg.textContent = ''; 
+        goblinImg.src = '/assets/goblin.png'; 
     }
     if (goblin.hp === 0) {
-        goblinImg.textContent = ''; 
+        goblinImg.src = '/assets/goblin.png'; 
     }
+
+    goblinDiv.append(goblinImg, goblinName, goblinHP);
 
     return goblinDiv;
 }
