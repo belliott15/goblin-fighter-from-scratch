@@ -20,16 +20,19 @@
     </header>
     <main>
         <section id="section-1">
-            <select></select>
-            <div id="character-display">Display character here</div>
+            <select id="character-selector"></select>
+            <div id="character-display">Display character here
+                <img src="/assets/character-1.png" alt="wizard-character">
+            </div>
             <div id="character-hp">Character HP</div>
         </section>
         <section id="section-2">
             <div id="goblins-defeated">Goblins defeated: 0</div>
+            <div>extra stuff</div>
         </section>
         <section id="section-3">
-            <form>
-                <input id="goblin-input" />
+            <form id='submit'>
+                <input id="goblin-input" name="goblin-name" placeholder="Type Goblin Name Here"/>
                 <button id="submit-button">Add goblin</button>
             </form>
             <div id="display-goblins">

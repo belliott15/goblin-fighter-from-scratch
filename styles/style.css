@@ -28,7 +28,10 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    background-image: url(/assets/forest-background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 main {
@@ -40,17 +43,14 @@ main {
 }
 
 section {
-    background-color: var(--color5);
-    max-width: 80%;
+    max-width: 95%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+    margin-top: 30px;
+    border: solid 2px black;
 }
 
 header {
@@ -88,4 +88,6 @@ footer {
     justify-content: flex-end;
     background-color: var(--color3);
     box-shadow: var(--shadow);
+    margin-top: 50px;
+    background-color: green;
 }
