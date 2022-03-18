@@ -12,7 +12,7 @@ export function renderGoblins(goblin) {
     goblinDiv.classList.add('goblin');
 
     goblinName.textContent = goblin.name;
-    goblinHP.textContent = goblin.hp;
+    goblinHP.textContent = `HP: ${goblin.hp}`;
 
     if (goblin.hp === 10) {
         goblinImg.src = '/assets/boss-goblin.png'; 
@@ -51,4 +51,10 @@ export function renderGoblins(goblin) {
     goblinDiv.append(goblinImg, goblinName, goblinHP);
 
     return goblinDiv;
+}
+
+export function renderPotions(){
+    const potion = document.createElement('div');
+    potion.classList.add('potion');
+    return potion;
 }
