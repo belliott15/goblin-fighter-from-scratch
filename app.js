@@ -32,13 +32,6 @@ let goblinArr = [
 
 // set event listeners 
 
-characterDropdownEl.addEventListener('change', () => {
-  //increment waterCount
-  // call function to change character photo
-    let value = characterDropdownEl.value;
-    characterEl.src = `assets/character-${value}.jpg`;
-});
-
 goblinFormEl.addEventListener('submit', (e) => {
 //dont forget prevent default
     e.preventDefault(); 
@@ -135,9 +128,9 @@ function displayPotion(){
 displayPotion();
 
 
-let characters = [{ display: 'Cody', value: '1' }, { display: 'Beth', value: '2' }, 
-    { display: 'Riley', value: '3' }, { display: 'Hailey', value: '4' },
-    { display: 'Elliott', value: '5' }, { display: 'Susan', value: '6' }, { display: 'Khayman', value: '7' }];
+let characters = [{ display: 'Merlin', value: '1' }, { display: 'Winifred', value: '2' }, 
+    { display: 'Achiles', value: '3' }, { display: 'Jinx', value: '4' },
+    { display: 'Vox', value: '5' }, { display: 'Kalisi', value: '6' }, { display: 'Atrayu', value: '7' }];
 
 function renderCharacters() {
     for (let character of characters){
@@ -153,8 +146,3 @@ characterDropdownEl.addEventListener('change', () => {
 });
 
 renderCharacters();
-
-
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
