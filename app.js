@@ -11,9 +11,10 @@ const goblinFormEl = document.getElementById('submit');
 const goblinDisplayEl = document.getElementById('display-goblins');
 
 // let state
-let characterHP = 10;
+let characterHP = 7;
 let defeatedGoblinCount = 0;
 let potionCount = 1;
+// let characterStrength  = 0;
 
 let goblinArr = [
     {
@@ -66,7 +67,7 @@ function displayGoblins() {
   //render goblin function goes somewhere in here
     for (let goblin of goblinArr){
         const newGoblin = renderGoblins(goblin);
-        if (goblin.hp > 0){
+        if (goblin.hp > 0 && characterHP > 0){
             newGoblin.addEventListener('click', () => {
         //create random hit posibilies for both character and goblin
                 if (Math.random() < .33){
@@ -94,7 +95,7 @@ function displayGoblins() {
                     alert('GameOver');
                     characterDisplayEl.classList.add('defeated');
                 }
-                characterHPEl.textContent = `HP: ${characterHP}`;
+                // characterHPEl.textContent = `HP: ${characterHP}`;
                 goblinsDefeatedEl.textContent = `You have defeated ${defeatedGoblinCount} goblins!`;
 
                 displayGoblins();
@@ -128,9 +129,11 @@ function displayPotion(){
 displayPotion();
 
 
-let characters = [{ display: 'Merlin', value: '1' }, { display: 'Winifred', value: '2' }, 
-    { display: 'Achiles', value: '3' }, { display: 'Jinx', value: '4' },
-    { display: 'Vox', value: '5' }, { display: 'Kalisi', value: '6' }, { display: 'Atrayu', value: '7' }];
+
+let characters = [{ display: 'Merlin', value: '1', hp: 7, strength: 2 }, 
+    { display: 'Winifred', value: '2', hp: 6, strength: 3 }, { display: 'Achiles', value: '3', hp: 9, strength: 2 }, 
+    { display: 'Jinx', value: '4', hp: 4, strength: 5 }, { display: 'Vox', value: '5', hp: 4, strength: 5 }, 
+    { display: 'Kalisi', value: '6', hp: 10, strength: 1 }, { display: 'Atrayu', value: '7', hp: 10, strength: 1 }];
 
 function renderCharacters() {
     for (let character of characters){
@@ -138,11 +141,18 @@ function renderCharacters() {
         characterDropdownEl.append(option);
         option.textContent = character.display;
         option.value = character.value;
+        option.name = character.hp;
     }}
 
 characterDropdownEl.addEventListener('change', () => {
     let value = characterDropdownEl.value;
+    const currentCharacter = characters[value - 1];
     characterEl.src = `assets/character-${value}.png`;
-});
+    characterHP = currentCharacter.hp;
+    characterHPEl.textContent = `Character Health Points: ${characterHP}`;
+    characterDisplayEl.classList.remove('defeated');
+    // characterStrength = currentCharacter.strength;
+}
+);
 
 renderCharacters();
