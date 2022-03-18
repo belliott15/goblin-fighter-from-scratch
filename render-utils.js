@@ -58,3 +58,4 @@ export function renderPotions(){
     potion.classList.add('potion');
     return potion;
 }
+

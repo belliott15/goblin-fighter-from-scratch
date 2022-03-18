@@ -131,6 +131,26 @@ function displayPotion(){
 displayPotion();
 
 
+let characters = [{ display: 'Tyler', value: '1' }, { display: 'Stephanie', value: '2' }, 
+    { display: 'Madden', value: '3' }, { display: 'Hailey', value: '4' },
+    { display: 'Elliott', value: '5' }, { display: 'Susan', value: '6' }, { display: 'Pete', value: '7' }];
+
+function renderCharacters() {
+    for (let character of characters){
+        const option = document.createElement('option');
+        characterDropdownEl.append(option);
+        option.textContent = character.display;
+        option.value = character.value;
+    }}
+
+characterDropdownEl.addEventListener('click', () => {
+  let value = characterDropdownEl.value;
+    characterEl.src = `assets/character-${value}.png`;
+});
+
+renderCharacters();
+
+
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
