@@ -143,8 +143,8 @@ function renderCharacters() {
         option.value = character.value;
     }}
 
-characterDropdownEl.addEventListener('click', () => {
-  let value = characterDropdownEl.value;
+characterDropdownEl.addEventListener('change', () => {
+    let value = characterDropdownEl.value;
     characterEl.src = `assets/character-${value}.png`;
 });
 

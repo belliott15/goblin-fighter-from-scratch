@@ -51,7 +51,7 @@ section {
     justify-content: center;
     align-items: center;
     margin-top: 100px;
-    border: solid 2px black;
+    /* border: solid 2px black; */
     position: center;
 }
 
@@ -97,8 +97,16 @@ footer {
     background-color: green;
 }
 
-#section-1 {
-    position: relative;
+#character-selector {
+    margin-top: 40px;
+    width: 70%;
+    height: 40px;
+    font-family: Varela Round, sans-serif;
+    font-size: 20px;
+    background-color: rgb(128, 0, 0);
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 #character-display img {
@@ -208,3 +216,4 @@ footer {
     background-repeat: no-repeat;
     opacity: .9;
 }
+
