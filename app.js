@@ -17,15 +17,15 @@ let potionCount = 1;
 
 let goblinArr = [
     {
-        name: 'Dani',
+        name: 'Nadi',
         hp: 10
     },
     {
-        name: 'Madden',
+        name: 'Damden',
         hp: 7
     }, 
     {
-        name: 'Pete',
+        name: 'Teep',
         hp: 7
     }
 ];
@@ -55,6 +55,10 @@ goblinFormEl.addEventListener('submit', (e) => {
     if (goblinArr.length >= 6) {
         alert('You\'re being overrun take one damage');
         characterHP--;
+    } 
+    if (goblinArr.length >= 9){
+        goblinArr.shift();
+        alert('you cannot add anymore goblins');
     }
 // display goblin function
     displayGoblins();
@@ -131,9 +135,9 @@ function displayPotion(){
 displayPotion();
 
 
-let characters = [{ display: 'Tyler', value: '1' }, { display: 'Stephanie', value: '2' }, 
-    { display: 'Madden', value: '3' }, { display: 'Hailey', value: '4' },
-    { display: 'Elliott', value: '5' }, { display: 'Susan', value: '6' }, { display: 'Pete', value: '7' }];
+let characters = [{ display: 'Cody', value: '1' }, { display: 'Beth', value: '2' }, 
+    { display: 'Riley', value: '3' }, { display: 'Hailey', value: '4' },
+    { display: 'Elliott', value: '5' }, { display: 'Susan', value: '6' }, { display: 'Khayman', value: '7' }];
 
 function renderCharacters() {
     for (let character of characters){
