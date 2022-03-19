@@ -32,7 +32,6 @@ let goblinArr = [
 ];
 
 // set event listeners 
-
 goblinFormEl.addEventListener('submit', (e) => {
 //dont forget prevent default
     e.preventDefault(); 
@@ -44,21 +43,28 @@ goblinFormEl.addEventListener('submit', (e) => {
         hp: Math.ceil(Math.random() * 10)
     };
 //push new goblin to goblin array
-    goblinArr.unshift(newGoblin);
+    if (characterHP > 0) {
+        goblinArr.unshift(newGoblin);
 
-    if (goblinArr.length >= 6) {
-        alert('You\'re being overrun take one damage');
-        characterHP--;
-    } 
-    if (goblinArr.length >= 9){
-        goblinArr.shift();
-        alert('you cannot add anymore goblins');
-    }
+        if (goblinArr.length >= 6) {
+            alert('You\'re being overrun take one damage');
+            characterHP--;
+        } 
+        if (goblinArr.length >= 9){
+            goblinArr.shift();
+            alert('you cannot add anymore goblins');
+        }
+    
 // display goblin function
-    displayGoblins();
+        displayGoblins();
 // clear the input values
-    goblinFormEl.reset();
+        goblinFormEl.reset();
+    } else {
+        alert('You\'re dead please stop clicking.');
+    }
 });
+
+
 
 
 function displayGoblins() {
@@ -116,10 +122,14 @@ function displayPotion(){
     for (let i = 0; i < potionCount; i++){
         const potionImg = renderPotions();
         potionImg.addEventListener('click', () => {
-            potionCount--;
-            characterHP++;
-            displayPotion();
-            characterHPEl.textContent = `Character Health Points: ${characterHP}`;
+            if (characterHP > 0) {
+                potionCount--;
+                characterHP++;
+                displayPotion();
+                characterHPEl.textContent = `Character Health Points: ${characterHP}`;
+            } else {
+                alert('Potions cannot help you now!');
+            }
         });
         potionDisplay.append(potionImg);
     }
