@@ -155,12 +155,16 @@ function renderCharacters() {
     }}
 
 characterDropdownEl.addEventListener('change', () => {
-    let value = characterDropdownEl.value;
-    const currentCharacter = characters[value - 1];
-    characterEl.src = `assets/character-${value}.png`;
-    characterHP = currentCharacter.hp;
-    characterHPEl.textContent = `Character Health Points: ${characterHP}`;
-    characterDisplayEl.classList.remove('defeated');
+    if (characterHP > 0) {
+        let value = characterDropdownEl.value;
+        const currentCharacter = characters[value - 1];
+        characterEl.src = `assets/character-${value}.png`;
+        characterHP = currentCharacter.hp;
+        characterHPEl.textContent = `Character Health Points: ${characterHP}`;
+        characterDisplayEl.classList.remove('defeated');
+    } else {
+        alert('If one dies, we all die');
+    }
 }
 );
 
