@@ -151,7 +151,6 @@ characterDropdownEl.addEventListener('change', () => {
     characterHP = currentCharacter.hp;
     characterHPEl.textContent = `Character Health Points: ${characterHP}`;
     characterDisplayEl.classList.remove('defeated');
-    // characterStrength = currentCharacter.strength;
 }
 );
 
